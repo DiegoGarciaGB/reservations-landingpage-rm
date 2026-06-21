@@ -1,0 +1,124 @@
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --surface: #ffffff;
+  --foreground: #09090b;
+  --muted: #71717a;
+  --border: #e4e4e7;
+  --radius: 0.5rem; /* consistent radius for surfaces and buttons */
+  --primary: #09090b;
+  --primary-foreground: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Semantic typography system: pure CSS, no @apply or Tailwind utilities
+   Controls only: font-size, font-weight, line-height */
+
+.display {
+  font-size: 2rem;         /* text-4xl equivalent: 36px */
+  font-weight: 700;        /* bold */
+  line-height: 1.25;       /* leading-tight */
+}
+
+@media (min-width: 640px) {
+  .display {
+    font-size: 3rem;       /* text-5xl equivalent: 48px */
+  }
+}
+
+.heading {
+  font-size: 1.5rem;       /* text-2xl equivalent: 24px */
+  font-weight: 600;        /* semibold */
+  line-height: 1.625;      /* leading-relaxed */
+}
+
+@media (min-width: 640px) {
+  .heading {
+    font-size: 1.875rem;   /* text-3xl equivalent: 30px */
+  }
+}
+
+.subheading {
+  font-size: 1.125rem;     /* text-lg equivalent: 18px */
+  font-weight: 600;        /* semibold */
+  line-height: 1.625;      /* leading-relaxed */
+}
+
+.caption {
+  font-size: 0.875rem;     /* text-sm equivalent: 14px */
+  font-weight: 400;        /* normal */
+  line-height: 1.625;      /* leading-relaxed */
+}
+
+/* Visual grouping utilities: buttons, subtle surfaces, nav breathing, borders and spacing
+   - Surfaces use a subtle border and a consistent radius, no strong shadows, no added colors.
+   - Buttons provide an actionable affordance; primary uses the brand CSS vars, ghost is neutral.
+   - nav-breathing adds horizontal padding to give the navbar more room without changing layout.
+*/
+@layer utilities {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-5 py-3 text-sm font-semibold transition-colors duration-150;
+    border-radius: var(--radius);
+    background: var(--primary);
+    color: var(--primary-foreground);
+    border: 1px solid transparent;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-5 py-3 text-sm font-semibold transition-colors duration-150;
+    border-radius: var(--radius);
+    background: transparent;
+    color: inherit;
+    border: 1px solid var(--border);
+  }
+
+  /* A subtle surface to group related content without adding color: border + radius + padding
+     Use additional Tailwind spacing classes alongside `.surface` when a different padding is desired. */
+  .surface {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: transparent; /* intentionally colorless */
+  }
+
+  /* Navbar breathing: adds horizontal padding inside a nav container for more whitespace. */
+  .nav-breathing {
+    @apply px-6;
+  }
+
+  @media (min-width: 768px) {
+    .nav-breathing {
+      @apply px-8;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .nav-breathing {
+      @apply px-12;
+    }
+  }
+}
+
