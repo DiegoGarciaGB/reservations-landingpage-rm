@@ -19,7 +19,7 @@ export default function PromoTicker() {
             className="mx-4 shrink-0 whitespace-nowrap text-sm font-bold uppercase tracking-widest sm:mx-8 sm:text-base"
           >
             <span className="text-[var(--muted)]">
-              🎉 PROMOCIÓN DE LANZAMIENTO:
+              🎉 PROMOCIÓN DE LANZAMIENTO
             </span>{' '}
             <span className="text-[var(--foreground)]">
               INSTALACIÓN SIN COSTO PARA LOS PRIMEROS 10 NEGOCIOS 🎉

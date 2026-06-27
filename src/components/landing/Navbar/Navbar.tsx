@@ -50,7 +50,7 @@ export default function Navbar() {
             ))}
             <Link
               href="#cta"
-              className="btn-inverted text-sm"
+              className="btn-nav-primary"
             >
               Empezar
             </Link>
@@ -84,7 +84,7 @@ export default function Navbar() {
               ))}
               <Link
                 href="#cta"
-                className="btn-inverted mt-4 text-center"
+                className="btn-nav-primary mt-4 text-center"
                 onClick={() => setMobileOpen(false)}
               >
                 Empezar
