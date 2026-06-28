@@ -34,7 +34,7 @@ export default function Navbar() {
           aria-label="Navegación principal"
         >
           {/* Logo */}
-          <Link href="/" className="text-lg font-semibold tracking-tight">
+          <Link href="/" className="text-lg font-semibold tracking-tight font-heading">
             Run Systems
           </Link>
 
@@ -44,7 +44,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-white/60 transition-colors duration-150 hover:text-white"
+                className="brand-link-hover text-sm font-medium text-white/60 transition-colors duration-150"
               >
                 {item.label}
               </Link>
@@ -77,7 +77,7 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="rounded-lg px-4 py-3 text-lg font-medium text-white/60 transition-colors hover:bg-white/5 hover:text-white"
+                  className="brand-link-hover rounded-lg px-4 py-3 text-lg font-medium text-white/60 transition-colors hover:bg-white/5"
                   onClick={() => setMobileOpen(false)}
                 >
                   {item.label}

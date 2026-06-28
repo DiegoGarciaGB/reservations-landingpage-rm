@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="py-14 grid gap-10 sm:grid-cols-[1.5fr_1fr_1fr] sm:gap-8">
           {/* Brand Column */}
           <div>
-            <p className="text-lg font-semibold tracking-tight text-[var(--muted)]">Run Systems</p>
+            <p className="text-lg font-semibold tracking-tight text-[var(--muted)] font-heading">Run Systems</p>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/40">
               Gestión de reservas inteligente con automatización por WhatsApp para tu negocio.
             </p>
@@ -30,7 +30,7 @@ export default function Footer() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm text-white/50 transition-colors hover:text-white w-fit"
+                  className="brand-link-hover text-sm text-white/50 transition-colors w-fit"
                 >
                   {item.label}
                 </Link>
@@ -46,19 +46,19 @@ export default function Footer() {
             <div className="flex flex-col gap-2.5">
               <a
                 href={`mailto:${links.email}`}
-                className="text-sm text-white/50 transition-colors hover:text-white w-fit"
+                className="brand-link-hover text-sm text-white/50 transition-colors w-fit"
               >
                 {links.email}
               </a>
               <Link
                 href="/terms"
-                className="text-sm text-white/50 transition-colors hover:text-white w-fit"
+                className="brand-link-hover text-sm text-white/50 transition-colors w-fit"
               >
                 Términos y Condiciones
               </Link>
               <Link
                 href="/privacy"
-                className="text-sm text-white/50 transition-colors hover:text-white w-fit"
+                className="brand-link-hover text-sm text-white/50 transition-colors w-fit"
               >
                 Aviso de Privacidad
               </Link>

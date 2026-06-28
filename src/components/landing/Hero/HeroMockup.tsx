@@ -121,18 +121,39 @@ export default function HeroMockup() {
       </div>
 
       {/* ── Foreground WhatsApp Chat Layer (Taller layout + Pulsing online micro-animation) ── */}
-      <div className="absolute bottom-0 right-0 w-[58%] h-[97%] rounded-2xl border border-[var(--border)] bg-[#ECE5DD] shadow-2xl flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 z-20">
+      <div 
+        className="absolute bottom-0 right-0 w-[58%] h-[97%] rounded-2xl border border-[var(--border)] bg-gradient-to-b from-[#efeae2] to-[#e5ddd5] shadow-2xl flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 z-20"
+        style={{ fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif' }}
+      >
         {/* WhatsApp Header */}
-        <div className="bg-[#075E54] text-white p-3 flex items-center gap-2.5 shadow-sm">
-          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/20 flex items-center justify-center font-bold text-xs sm:text-sm">
-            B
-          </div>
-          <div>
-            <h4 className="text-[10px] sm:text-xs font-semibold leading-none">Run Barber (Bot)</h4>
-            <div className="flex items-center gap-1 mt-0.5">
-              <span className="w-1 h-1 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span className="text-[8px] sm:text-[9px] text-white/70 leading-none">en línea</span>
+        <div className="bg-[#075E54] text-white p-3 flex items-center justify-between shadow-sm">
+          <div className="flex items-center gap-2.5">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/20 flex items-center justify-center text-white">
+              {/* Scissors/Barber Icon */}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4 sm:w-4.5 sm:h-4.5">
+                <circle cx="6" cy="6" r="3" />
+                <circle cx="6" cy="18" r="3" />
+                <line x1="20" y1="4" x2="8.12" y2="15.88" />
+                <line x1="14.47" y1="14.48" x2="20" y2="20" />
+                <line x1="8.12" y1="8.12" x2="12" y2="12" />
+              </svg>
             </div>
+            <div>
+              <h4 className="text-[10px] sm:text-xs font-semibold leading-none">Run Barber (Bot)</h4>
+              <div className="flex items-center gap-1 mt-0.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span className="text-[8px] sm:text-[9px] text-white/70 leading-none">en línea</span>
+              </div>
+            </div>
+          </div>
+          {/* Mock Call Icons */}
+          <div className="flex items-center gap-3 text-white/80">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5 sm:w-4 sm:h-4">
+              <path strokeLinecap="round" strokeLinejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3.5 h-3.5 sm:w-4 sm:h-4">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.824-1.281-5.117-3.574-6.398-6.398l1.293-.97c.362-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+            </svg>
           </div>
         </div>
 
@@ -140,67 +161,123 @@ export default function HeroMockup() {
         <div className="flex-1 p-3 overflow-y-auto space-y-2 text-[9px] sm:text-[11px] leading-tight no-scrollbar">
           {/* Incoming Msg (Client) */}
           <div className="flex justify-end">
-            <div className="bg-[#DCF8C6] text-black max-w-[80%] rounded-lg p-2 shadow-sm rounded-tr-none">
+            <div className="bg-[#d9fdd3] text-black max-w-[80%] rounded-lg px-2.5 py-1.5 shadow-sm rounded-tr-none flex flex-col">
               <p>Hola, quiero agendar mañana</p>
+              <div className="flex items-center justify-end gap-1 mt-0.5 self-end">
+                <span className="text-[7px] text-gray-500/80">10:04 AM</span>
+                <span className="text-sky-500 text-[10px] leading-none">✓✓</span>
+              </div>
             </div>
           </div>
 
           {/* Outgoing Msg (Bot) */}
           <div className="flex justify-start">
-            <div className="bg-white text-black max-w-[85%] rounded-lg p-2 shadow-sm rounded-tl-none space-y-1">
+            <div className="bg-white text-black max-w-[85%] rounded-lg px-2.5 py-1.5 shadow-sm rounded-tl-none space-y-1 flex flex-col">
+              <p className="font-semibold text-[#075E54] text-[8px] sm:text-[9.5px]">Run Barber (Bot)</p>
               <p className="font-medium">¡Hola! Bienvenido a Run Barber.</p>
               <p>Estos son los servicios disponibles:</p>
-              <p className="font-mono text-[8px] sm:text-[10px]">1. Corte de cabello<br />2. Afeitado de barba</p>
-              <p className="text-[8px] text-gray-500 font-semibold">*Responde con el número o nombre del servicio.*</p>
+              <p className="font-mono text-[8px] sm:text-[10px] bg-gray-50 p-1.5 rounded border border-gray-100 leading-normal">
+                1. Corte de cabello<br />
+                2. Afeitado de barba
+              </p>
+              <p className="text-[7.5px] text-gray-500 font-semibold">*Responde con el número o nombre del servicio.*</p>
+              <div className="flex justify-end mt-0.5 self-end">
+                <span className="text-[7px] text-gray-400">10:04 AM</span>
+              </div>
             </div>
           </div>
 
           {/* Incoming Msg (Client) */}
           <div className="flex justify-end">
-            <div className="bg-[#DCF8C6] text-black max-w-[80%] rounded-lg p-2 shadow-sm rounded-tr-none">
+            <div className="bg-[#d9fdd3] text-black max-w-[80%] rounded-lg px-2.5 py-1.5 shadow-sm rounded-tr-none flex flex-col">
               <p>Corte de cabello</p>
+              <div className="flex items-center justify-end gap-1 mt-0.5 self-end">
+                <span className="text-[7px] text-gray-500/80">10:05 AM</span>
+                <span className="text-sky-500 text-[10px] leading-none">✓✓</span>
+              </div>
             </div>
           </div>
 
           {/* Outgoing Msg (Bot) */}
           <div className="flex justify-start">
-            <div className="bg-white text-black max-w-[85%] rounded-lg p-2 shadow-sm rounded-tl-none space-y-1">
+            <div className="bg-white text-black max-w-[85%] rounded-lg px-2.5 py-1.5 shadow-sm rounded-tl-none space-y-1 flex flex-col">
+              <p className="font-semibold text-[#075E54] text-[8px] sm:text-[9.5px]">Run Barber (Bot)</p>
               <p>Horarios para <span className="font-semibold">Corte de cabello</span> el sábado 27:</p>
-              <p className="font-mono text-[8px] sm:text-[10px]">1. 11:30 AM (Diego)<br />2. 12:30 PM (Roberto)</p>
-              <p className="text-[8px] text-gray-500 font-semibold">*Responde con el número o escribe la hora.*</p>
+              <p className="font-mono text-[8px] sm:text-[10px] bg-gray-50 p-1.5 rounded border border-gray-100 leading-normal">
+                1. 11:30 AM (Diego)<br />
+                2. 12:30 PM (Roberto)
+              </p>
+              <p className="text-[7.5px] text-gray-500 font-semibold">*Responde con el número o escribe la hora.*</p>
+              <div className="flex justify-end mt-0.5 self-end">
+                <span className="text-[7px] text-gray-400">10:05 AM</span>
+              </div>
             </div>
           </div>
 
           {/* Incoming Msg (Client) */}
           <div className="flex justify-end">
-            <div className="bg-[#DCF8C6] text-black max-w-[80%] rounded-lg p-2 shadow-sm rounded-tr-none">
+            <div className="bg-[#d9fdd3] text-black max-w-[80%] rounded-lg px-2.5 py-1.5 shadow-sm rounded-tr-none flex flex-col">
               <p>12:30 pm</p>
+              <div className="flex items-center justify-end gap-1 mt-0.5 self-end">
+                <span className="text-[7px] text-gray-500/80">10:06 AM</span>
+                <span className="text-sky-500 text-[10px] leading-none">✓✓</span>
+              </div>
             </div>
           </div>
 
           {/* Outgoing Msg (Bot) */}
           <div className="flex justify-start">
-            <div className="bg-white text-black max-w-[85%] rounded-lg p-2 shadow-sm rounded-tl-none space-y-1">
-              <p className="font-medium text-[8px] uppercase tracking-wider text-gray-500">Resumen de tu cita:</p>
-              <p>Servicio: <span className="font-semibold">Corte de cabello</span></p>
-              <p>Horario: <span className="font-semibold">Sábado 27 - 12:30 PM</span></p>
-              <p className="text-[8px] text-gray-500 font-semibold">¿Confirmar? *Responde: Sí o No.*</p>
+            <div className="bg-white text-black max-w-[85%] rounded-lg px-2.5 py-1.5 shadow-sm rounded-tl-none space-y-1 flex flex-col">
+              <p className="font-semibold text-[#075E54] text-[8px] sm:text-[9.5px]">Run Barber (Bot)</p>
+              <p className="font-semibold text-[8px] uppercase tracking-wider text-gray-500">Resumen de tu cita:</p>
+              <div className="bg-gray-50 p-1.5 rounded border border-gray-100 space-y-0.5 text-[8.5px] sm:text-[10px]">
+                <p>Servicio: <span className="font-semibold">Corte de cabello</span></p>
+                <p>Horario: <span className="font-semibold">Sábado 27 - 12:30 PM</span></p>
+              </div>
+              <p className="text-[7.5px] text-gray-500 font-semibold">¿Confirmar? *Responde: Sí o No.*</p>
+              <div className="flex justify-end mt-0.5 self-end">
+                <span className="text-[7px] text-gray-400">10:06 AM</span>
+              </div>
             </div>
           </div>
 
           {/* Incoming Msg (Client) */}
           <div className="flex justify-end">
-            <div className="bg-[#DCF8C6] text-black max-w-[80%] rounded-lg p-2 shadow-sm rounded-tr-none">
+            <div className="bg-[#d9fdd3] text-black max-w-[80%] rounded-lg px-2.5 py-1.5 shadow-sm rounded-tr-none flex flex-col">
               <p>Sí</p>
+              <div className="flex items-center justify-end gap-1 mt-0.5 self-end">
+                <span className="text-[7px] text-gray-500/80">10:06 AM</span>
+                <span className="text-sky-500 text-[10px] leading-none">✓✓</span>
+              </div>
             </div>
           </div>
 
           {/* Outgoing Msg (Bot) */}
           <div className="flex justify-start">
-            <div className="bg-white text-black max-w-[85%] rounded-lg p-2 shadow-sm rounded-tl-none space-y-1 border-l-4 border-emerald-500">
+            <div className="bg-white text-black max-w-[85%] rounded-lg px-2.5 py-1.5 shadow-sm rounded-tl-none space-y-1 border-l-4 border-emerald-500 flex flex-col">
+              <p className="font-semibold text-[#075E54] text-[8px] sm:text-[9.5px]">Run Barber (Bot)</p>
               <p className="font-semibold text-emerald-600 flex items-center gap-1">📅 ¡Cita confirmada!</p>
-              <p>Código: <span className="font-mono font-semibold">BC-400</span></p>
+              <p>Código: <span className="font-mono font-semibold bg-emerald-50 text-emerald-800 px-1 rounded">BC-400</span></p>
+              <div className="flex justify-end mt-0.5 self-end">
+                <span className="text-[7px] text-gray-400">10:07 AM</span>
+              </div>
             </div>
+          </div>
+        </div>
+
+        {/* Mock WhatsApp Bottom Bar */}
+        <div className="bg-[#f0f0f0] p-1.5 sm:p-2 flex items-center gap-2 border-t border-gray-200/80">
+          <div className="flex-1 bg-white rounded-full px-3 py-1 flex items-center justify-between text-[8px] sm:text-[10px] text-gray-400 shadow-sm border border-gray-200/30">
+            <span>Escribe un mensaje...</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-gray-400">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z" />
+            </svg>
+          </div>
+          <div className="w-6 h-6 sm:w-7.5 sm:h-7.5 rounded-full bg-[#075E54] text-white flex items-center justify-center shadow-md cursor-pointer hover:bg-[#0b4d45] transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3 h-3 sm:w-3.5 sm:h-3.5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
+            </svg>
           </div>
         </div>
       </div>

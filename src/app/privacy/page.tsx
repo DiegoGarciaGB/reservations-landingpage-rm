@@ -9,7 +9,7 @@ export default function PrivacyPage() {
       <header className="border-b border-[var(--border)] bg-[var(--surface)] py-4 sticky top-0 z-50 backdrop-blur-md bg-opacity-80">
         <Container>
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-lg font-bold tracking-tight text-[var(--foreground)] hover:opacity-80 transition-opacity">
+            <Link href="/" className="text-lg font-bold tracking-tight text-[var(--foreground)] hover:opacity-80 transition-opacity font-heading">
               Run Systems
             </Link>
             <Link href="/" className="text-xs font-semibold uppercase tracking-wider text-gray-500 hover:text-[var(--foreground)] transition-colors">
