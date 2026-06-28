@@ -4,8 +4,8 @@ import { LayoutDashboard, CalendarDays, CalendarClock, PanelLeft } from 'lucide-
 export default function HeroMockup() {
   return (
     <div className="relative w-full aspect-[4/3] sm:aspect-square lg:aspect-[4/3] flex items-center justify-center select-none font-sans">
-      {/* ── Background Dashboard Layer (Real System Screenshot Replica) ── */}
-      <div className="absolute top-0 left-0 w-[78%] h-[78%] rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-md flex overflow-hidden transition-all duration-300 hover:shadow-lg z-10">
+      {/* ── Background Dashboard Layer (Larger, more prominent scale) ── */}
+      <div className="absolute top-0 left-0 w-[86%] h-[86%] rounded-2xl border border-[var(--border)] bg-[var(--surface)] shadow-md flex overflow-hidden transition-all duration-300 hover:shadow-lg z-10">
         {/* Left App Sidebar */}
         <div className="w-8 border-r border-[var(--border)] bg-gray-50 flex flex-col items-center text-gray-400">
           {/* Menu Toggle Button (PanelLeft) aligned to header height */}
@@ -25,7 +25,7 @@ export default function HeroMockup() {
 
         {/* Main Content Area */}
         <div className="flex-1 flex flex-col min-w-0 bg-white">
-          {/* Header (Aligned in height with sidebar toggle container) */}
+          {/* Header */}
           <div className="h-8 flex items-center justify-between px-3 border-b border-[var(--border)] text-[9px] sm:text-[10px]">
             <div className="flex items-center gap-2">
               <span className="font-bold text-[var(--foreground)]">Sábado, 27 De Junio</span>
@@ -51,65 +51,56 @@ export default function HeroMockup() {
             </div>
           </div>
 
-          {/* Agenda Grid (Symmetric mathematical spacing) */}
+          {/* Agenda Grid (Symmetric mathematical spacing, stretching using 1fr rows) */}
           <div className="flex-1 flex min-w-0 overflow-y-auto no-scrollbar relative">
             
             {/* Time Axis Column */}
-            <div className="w-[38px] grid grid-cols-1 auto-rows-[26px] border-r border-[var(--border)] text-[7px] sm:text-[8px] text-gray-400 font-mono pr-1 py-1">
+            <div className="w-[38px] grid grid-cols-1 grid-rows-[repeat(9,1fr)] border-r border-[var(--border)] text-[7px] sm:text-[8px] text-gray-400 font-mono pr-1 py-1 h-full">
               {['09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00'].map((time) => (
-                <div key={time} className="h-[26px] flex items-center justify-end pr-1 leading-none">
+                <div key={time} className="flex items-center justify-end pr-1 leading-none">
                   {time}
                 </div>
               ))}
             </div>
 
             {/* Grid Area */}
-            <div className="flex-1 grid grid-cols-2 relative">
+            <div className="flex-1 grid grid-cols-2 relative h-full">
               
               {/* Column 1: Roberto Mancilla (Left side - white background grid, light blue cards) */}
-              <div className="border-r border-[var(--border)] bg-white grid grid-cols-1 auto-rows-[26px] py-1 relative">
+              <div className="border-r border-[var(--border)] bg-white grid grid-cols-1 grid-rows-[repeat(9,1fr)] py-1 relative h-full">
                 {[...Array(9)].map((_, i) => (
-                  <div key={i} className="border-b border-gray-100 h-[26px]"></div>
+                  <div key={i} className="border-b border-gray-100 h-full"></div>
                 ))}
 
-                {/* Layered Booking Cards absolute positioned over the columns grid */}
+                {/* Layered Booking Cards positioned via CSS Grid Row Span (scalable & responsive) */}
                 
-                {/* Appointment 1: 09:00 - 10:00 */}
-                <div 
-                  className="absolute left-1 right-1 bg-[#E0F2FE] border border-[#BAE6FD] rounded p-1 flex flex-col justify-between shadow-sm z-10"
-                  style={{ top: '6px', height: '48px' }}
-                >
+                {/* Appointment 1: 09:00 - 10:00 (Spans Row 1 to Row 3) */}
+                <div className="col-start-1 col-end-2 row-start-1 row-end-3 mx-1 my-0.5 bg-[#E0F2FE] border border-[#BAE6FD] rounded p-1 flex flex-col justify-between shadow-sm z-10">
                   <div className="leading-tight">
-                    <h5 className="font-bold text-[#0369A1] text-[7px] sm:text-[8px] truncate leading-none">Corte de Pelo</h5>
-                    <span className="text-[6px] text-gray-500 truncate block mt-0.5 font-medium">Roberto Mancilla • 09:00 - 10:00</span>
+                    <h5 className="font-bold text-[var(--muted)] text-[8px] sm:text-[9.5px] truncate leading-none">Corte de Pelo</h5>
+                    <span className="text-[6.5px] text-gray-500 truncate block mt-0.5 font-medium">Roberto Mancilla • 09:00 - 10:00</span>
                   </div>
                   <span className="self-end px-1 py-0.2 rounded bg-white text-emerald-600 font-bold border border-emerald-100 text-[5px] sm:text-[6px] leading-none">
                     Confirmada
                   </span>
                 </div>
 
-                {/* Appointment 2: 11:00 - 12:30 (Andres Uribe removed to leave exactly 3 cards total) */}
-                <div 
-                  className="absolute left-1 right-1 bg-[#E0F2FE] border border-[#BAE6FD] rounded p-1 flex flex-col justify-between shadow-sm z-10"
-                  style={{ top: '110px', height: '74px' }}
-                >
+                {/* Appointment 2: 11:00 - 12:30 (Spans Row 5 to Row 8) */}
+                <div className="col-start-1 col-end-2 row-start-5 row-end-8 mx-1 my-0.5 bg-[#E0F2FE] border border-[#BAE6FD] rounded p-1 flex flex-col justify-between shadow-sm z-10">
                   <div className="leading-tight">
-                    <h5 className="font-bold text-[#0369A1] text-[7px] sm:text-[8px] truncate leading-none">Afeitado de barba + Corte</h5>
-                    <span className="text-[6px] text-gray-500 truncate block mt-0.5 font-medium">Diego Garcia • 11:00 - 12:30</span>
+                    <h5 className="font-bold text-[var(--muted)] text-[8px] sm:text-[9.5px] truncate leading-none">Afeitado + Corte</h5>
+                    <span className="text-[6.5px] text-gray-500 truncate block mt-0.5 font-medium">Diego Garcia • 11:00 - 12:30</span>
                   </div>
                   <span className="self-end px-1 py-0.2 rounded bg-white text-emerald-600 font-bold border border-emerald-100 text-[5px] sm:text-[6px] leading-none">
                     Confirmada
                   </span>
                 </div>
 
-                {/* Appointment 3: 12:30 - 13:30 (Carlos Brambila - Newly WA booked, styled clean like other cards) */}
-                <div 
-                  className="absolute left-1 right-1 bg-[#E0F2FE] border border-[#BAE6FD] rounded p-1 flex flex-col justify-between shadow-sm z-10"
-                  style={{ top: '188px', height: '48px' }}
-                >
+                {/* Appointment 3: 12:30 - 13:30 (Spans Row 8 to Row 10) */}
+                <div className="col-start-1 col-end-2 row-start-8 row-end-10 mx-1 my-0.5 bg-[#E0F2FE] border border-[#BAE6FD] rounded p-1 flex flex-col justify-between shadow-sm z-10">
                   <div className="leading-tight">
-                    <h5 className="font-bold text-[#0369A1] text-[7px] sm:text-[8px] truncate leading-none">Corte de Pelo</h5>
-                    <span className="text-[6px] text-gray-500 truncate block mt-0.5 font-medium">Carlos Brambila • 12:30 - 13:30</span>
+                    <h5 className="font-bold text-[var(--muted)] text-[8px] sm:text-[9.5px] truncate leading-none">Corte de Pelo</h5>
+                    <span className="text-[6.5px] text-gray-500 truncate block mt-0.5 font-medium">Carlos Brambila • 12:30 - 13:30</span>
                   </div>
                   <span className="self-end px-1 py-0.2 rounded bg-white text-emerald-600 font-bold border border-emerald-100 text-[5px] sm:text-[6px] leading-none tracking-wide">
                     Confirmada
@@ -119,9 +110,9 @@ export default function HeroMockup() {
               </div>
 
               {/* Column 2: Diego García (Right side - white background grid, empty) */}
-              <div className="bg-white grid grid-cols-1 auto-rows-[26px] py-1">
+              <div className="bg-white grid grid-cols-1 grid-rows-[repeat(9,1fr)] py-1 h-full">
                 {[...Array(9)].map((_, i) => (
-                  <div key={i} className="border-b border-gray-100 h-[26px]"></div>
+                  <div key={i} className="border-b border-gray-100 h-full"></div>
                 ))}
               </div>
             </div>
@@ -129,8 +120,8 @@ export default function HeroMockup() {
         </div>
       </div>
 
-      {/* ── Foreground WhatsApp Chat Layer (Explicit z-20) ── */}
-      <div className="absolute bottom-0 right-0 w-[63%] h-[90%] rounded-2xl border border-[var(--border)] bg-[#ECE5DD] shadow-2xl flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 z-20">
+      {/* ── Foreground WhatsApp Chat Layer (Taller layout + Pulsing online micro-animation) ── */}
+      <div className="absolute bottom-0 right-0 w-[58%] h-[97%] rounded-2xl border border-[var(--border)] bg-[#ECE5DD] shadow-2xl flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 z-20">
         {/* WhatsApp Header */}
         <div className="bg-[#075E54] text-white p-3 flex items-center gap-2.5 shadow-sm">
           <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/20 flex items-center justify-center font-bold text-xs sm:text-sm">
@@ -138,7 +129,10 @@ export default function HeroMockup() {
           </div>
           <div>
             <h4 className="text-[10px] sm:text-xs font-semibold leading-none">Run Barber (Bot)</h4>
-            <span className="text-[8px] sm:text-[9px] text-white/70 leading-none">en línea</span>
+            <div className="flex items-center gap-1 mt-0.5">
+              <span className="w-1 h-1 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span className="text-[8px] sm:text-[9px] text-white/70 leading-none">en línea</span>
+            </div>
           </div>
         </div>
 

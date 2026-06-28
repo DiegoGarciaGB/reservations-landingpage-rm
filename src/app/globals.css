@@ -1,34 +1,68 @@
 @import "tailwindcss";
 
-/* ── Switzer Font ────────────────────────────────────────────── */
+/* ── General Sans Font (Local) ────────────────────────────────── */
 @font-face {
-  font-family: 'Switzer';
-  src: url('https://cdn.fontshare.com/wf/BLNB4FAQFNK56DWWNF7PMGTCOTZHOEII/ST3WKSSDMBK2MIQQO3MAVYWLF4FTOLFV/6IN5WOLRCYP4G4MOCOHOMXNON6Q7MDAR.woff2') format('woff2'),
-       url('https://cdn.fontshare.com/wf/BLNB4FAQFNK56DWWNF7PMGTCOTZHOEII/ST3WKSSDMBK2MIQQO3MAVYWLF4FTOLFV/6IN5WOLRCYP4G4MOCOHOMXNON6Q7MDAR.woff') format('woff');
+  font-family: 'General Sans';
+  src: url('/fonts/general-sans/WEB/fonts/GeneralSans-Regular.woff2') format('woff2'),
+       url('/fonts/general-sans/WEB/fonts/GeneralSans-Regular.woff') format('woff');
   font-weight: 400;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Switzer';
-  src: url('https://cdn.fontshare.com/wf/OYB4CXKJQXKTNSLJMTDQOIVUL2V5EL7S/WYO2P7DQVV5RNXGMCUO2HL4RJP4VFUAS/6XPIMU23OJVRY676OG5YVJMWEHWICATX.woff2') format('woff2'),
-       url('https://cdn.fontshare.com/wf/OYB4CXKJQXKTNSLJMTDQOIVUL2V5EL7S/WYO2P7DQVV5RNXGMCUO2HL4RJP4VFUAS/6XPIMU23OJVRY676OG5YVJMWEHWICATX.woff') format('woff');
+  font-family: 'General Sans';
+  src: url('/fonts/general-sans/WEB/fonts/GeneralSans-Medium.woff2') format('woff2'),
+       url('/fonts/general-sans/WEB/fonts/GeneralSans-Medium.woff') format('woff');
   font-weight: 500;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Switzer';
-  src: url('https://cdn.fontshare.com/wf/5SZVFDB7V52TI6ULVC6J3WQZQCIZVDV5/ODYPSTCUDMKSTYIPTV4CLQ7URIK7XYBJ/YS3VPNVO4B3TOJMEXDGFZQ4TLZGGSRZC.woff2') format('woff2'),
-       url('https://cdn.fontshare.com/wf/5SZVFDB7V52TI6ULVC6J3WQZQCIZVDV5/ODYPSTCUDMKSTYIPTV4CLQ7URIK7XYBJ/YS3VPNVO4B3TOJMEXDGFZQ4TLZGGSRZC.woff') format('woff');
+  font-family: 'General Sans';
+  src: url('/fonts/general-sans/WEB/fonts/GeneralSans-Semibold.woff2') format('woff2'),
+       url('/fonts/general-sans/WEB/fonts/GeneralSans-Semibold.woff') format('woff');
   font-weight: 600;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Switzer';
-  src: url('https://cdn.fontshare.com/wf/HBNTRIISA5MEXGL5WPYI7CV2HIWTDV3Q/YDPDINVT673XLXNSTMLG4JNCZZMVVNPN/Y7SCNZJOT2MW5ADSGOFLDGH4TNL4JCQY.woff2') format('woff2'),
-       url('https://cdn.fontshare.com/wf/HBNTRIISA5MEXGL5WPYI7CV2HIWTDV3Q/YDPDINVT673XLXNSTMLG4JNCZZMVVNPN/Y7SCNZJOT2MW5ADSGOFLDGH4TNL4JCQY.woff') format('woff');
+  font-family: 'General Sans';
+  src: url('/fonts/general-sans/WEB/fonts/GeneralSans-Bold.woff2') format('woff2'),
+       url('/fonts/general-sans/WEB/fonts/GeneralSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* ── Space Grotesk Font (Local) ───────────────────────────────── */
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/space-grotesk/WEB/fonts/SpaceGrotesk-Regular.woff2') format('woff2'),
+       url('/fonts/space-grotesk/WEB/fonts/SpaceGrotesk-Regular.woff') format('woff');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/space-grotesk/WEB/fonts/SpaceGrotesk-Medium.woff2') format('woff2'),
+       url('/fonts/space-grotesk/WEB/fonts/SpaceGrotesk-Medium.woff') format('woff');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/space-grotesk/WEB/fonts/SpaceGrotesk-SemiBold.woff2') format('woff2'),
+       url('/fonts/space-grotesk/WEB/fonts/SpaceGrotesk-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/fonts/space-grotesk/WEB/fonts/SpaceGrotesk-Bold.woff2') format('woff2'),
+       url('/fonts/space-grotesk/WEB/fonts/SpaceGrotesk-Bold.woff') format('woff');
   font-weight: 700;
   font-display: swap;
   font-style: normal;
@@ -63,7 +97,7 @@ body {
   min-height: 100%;
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Switzer', ui-sans-serif, system-ui, -apple-system,
+  font-family: 'General Sans', ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -271,7 +305,7 @@ a {
 }
 
 .surface-highlighted {
-  border: 2px solid var(--foreground);
+  border: 3px solid var(--foreground);
   border-radius: var(--radius);
   background-color: var(--surface);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
@@ -287,6 +321,39 @@ a {
 .navbar-scrolled {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   background: var(--foreground);
+}
+
+.surface-highlighted-blue {
+  border: 1px solid var(--muted);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.surface-highlighted-blue:hover {
+  box-shadow: 0 8px 32px rgba(51, 65, 85, 0.08);
+  transform: translateY(-2px);
+}
+
+.btn-primary-blue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  background-color: var(--muted);
+  color: #FFFFFF;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary-blue:hover {
+  background-color: var(--muted-soft);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(51, 65, 85, 0.2);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Container from '../../ui/Container'
 import { navigation } from '../../../data/navigation'
+import { links } from '../../../data/links'
 import { Menu, X } from 'lucide-react'
 
 export default function Navbar() {
@@ -23,13 +24,13 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 bg-[var(--foreground)] text-[var(--primary-foreground)] ${
-        scrolled ? 'navbar-scrolled' : ''
+      className={`sticky top-0 z-50 transition-all duration-300 bg-[var(--foreground)] text-[var(--primary-foreground)] border-b ${
+        scrolled ? 'border-white/10 shadow-lg shadow-black/5' : 'border-white/[0.06]'
       }`}
     >
       <Container>
         <nav
-          className="flex items-center justify-between py-4"
+          className="flex items-center justify-between py-3.5"
           aria-label="Navegación principal"
         >
           {/* Logo */}
@@ -38,7 +39,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden items-center gap-10 md:flex">
             {navigation.map((item) => (
               <Link
                 key={item.href}
@@ -49,7 +50,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="#cta"
+              href={links.getWhatsAppDemoLink()}
               className="btn-nav-primary"
             >
               Empezar
@@ -83,7 +84,7 @@ export default function Navbar() {
                 </Link>
               ))}
               <Link
-                href="#cta"
+                href={links.getWhatsAppDemoLink()}
                 className="btn-nav-primary mt-4 text-center"
                 onClick={() => setMobileOpen(false)}
               >

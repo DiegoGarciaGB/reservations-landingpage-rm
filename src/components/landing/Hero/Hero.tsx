@@ -2,12 +2,13 @@ import React from 'react'
 import Link from 'next/link'
 import Container from '../../ui/Container'
 import HeroMockup from './HeroMockup'
+import { links } from '../../../data/links'
 
 export default function Hero() {
   return (
     <section className="pb-16 pt-4 sm:pb-20 sm:pt-6">
       <Container>
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div className="grid gap-12 lg:grid-cols-[42%_58%] lg:items-center">
           {/* Left Column: Text */}
           <div className="max-w-3xl animate-fade-in-up">
             <h1 className="display mt-6">
@@ -18,12 +19,11 @@ export default function Hero() {
             </h1>
 
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--muted)]">
-              Deja que tus clientes reserven solos 24/7 por WhatsApp y simplifica
-              toda la operación de tu negocio con una agenda inteligente y centralizada.
+              Reservas automáticas por WhatsApp y agenda inteligente para simplificar tu negocio.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="#cta" className="btn-primary">
+              <Link href={links.getWhatsAppDemoLink()} className="btn-primary">
                 Agenda una demo
               </Link>
               <Link href="#how-it-works" className="btn-ghost">

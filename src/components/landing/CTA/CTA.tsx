@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Container from '../../ui/Container'
 import Section from '../../ui/Section'
-import { contact } from '../../../data/contact'
+import { links } from '../../../data/links'
 
 export default function CTA() {
   return (
@@ -20,8 +20,8 @@ export default function CTA() {
             tu negocio. Agenda una demo y te mostramos el sistema en acción.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Link href={contact.ctaHref} className="btn-inverted">
-              {contact.ctaLabel}
+            <Link href={links.getWhatsAppDemoLink()} className="btn-inverted">
+              Contactar a Run Systems
             </Link>
           </div>
         </div>

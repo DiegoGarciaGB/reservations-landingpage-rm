@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { Check } from 'lucide-react'
+import { links } from '../../../data/links'
 
 type PricingCardProps = {
   name: string
@@ -35,7 +36,7 @@ export default function PricingCard({
       <div className="flex items-center gap-3">
         <h3 className="subheading">{name}</h3>
         {badge && (
-          <span className="rounded-full bg-[var(--foreground)] px-3 py-0.5 text-xs font-semibold text-[var(--primary-foreground)]">
+          <span className="rounded-full bg-[var(--muted)]/10 px-3 py-0.5 text-xs font-semibold text-[var(--muted)] ring-1 ring-[var(--muted)]/20">
             {badge}
           </span>
         )}
@@ -72,7 +73,7 @@ export default function PricingCard({
 
       {/* CTA */}
       <Link
-        href="#cta"
+        href={links.getWhatsAppPlanLink(name)}
         className={`mt-4 text-center ${
           highlighted ? 'btn-primary' : 'btn-ghost'
         }`}
